@@ -41,6 +41,6 @@ export const registerController = async (req, res) => {
             errors: {
                 common: error.message
             }
-        })
+        });
     }
 }

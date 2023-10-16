@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import mongoose from "mongoose";
 import { commonErrorHandler, notFoundHandler } from "./middlewares/common/errorHandler.js";
 import authRouter from './routes/authRouter.js'
+import menuRouter from './routes/menuRouter.js'
 
 /**
  * express app
@@ -45,6 +46,11 @@ app.use(express.json());
  * auth router
  */
 app.use("/", authRouter);
+
+/**
+ * menu routes
+ */
+app.use("/menu", menuRouter);
 
 /**
  * server create

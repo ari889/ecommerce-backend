@@ -1,4 +1,11 @@
+/**
+ * external imports
+ */
 import express from "express"
+
+/**
+ * internal imports
+ */
 import checkLogin from "../middlewares/auth/checkLogin.js";
 import { addMenuValidationHandler, addMenuValidators, updateMenuValidationHandler, updateMenuValidators } from "../middlewares/menu/menuValidator.js";
 import { destroy, show, store, update } from "../controllers/menu/menuController.js";

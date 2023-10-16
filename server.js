@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import { commonErrorHandler, notFoundHandler } from "./middlewares/common/errorHandler.js";
 import authRouter from './routes/authRouter.js'
 import menuRouter from './routes/menuRouter.js'
+import roleRouter from './routes/roleRouter.js'
 
 /**
  * express app
@@ -51,6 +52,11 @@ app.use("/", authRouter);
  * menu routes
  */
 app.use("/menu", menuRouter);
+
+/**
+ * menu routes
+ */
+app.use("/role", roleRouter);
 
 /**
  * server create

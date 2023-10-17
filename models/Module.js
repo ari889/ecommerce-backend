@@ -1,8 +1,8 @@
-const mongoose = require('mongoose'); // Erase if already required
+import mongoose from "mongoose";
 
 // Declare the Schema of the Mongo model
 const moduleSchema = new mongoose.Schema({
-    menu: {
+    menu_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Menu"
     },
@@ -12,7 +12,11 @@ const moduleSchema = new mongoose.Schema({
     },
     module_name: {
         type: String,
-        required: false
+        required: true
+    },
+    url: {
+        type: String,
+        required: true,
     },
     divider_title: {
         type: String,
@@ -25,10 +29,12 @@ const moduleSchema = new mongoose.Schema({
     order: {
         type: Number,
         required: false,
+        default: 0
     },
-    parent: {
+    parent_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Module"
+        ref: "Module",
+        default: null
     },
     target: {
         type: String,

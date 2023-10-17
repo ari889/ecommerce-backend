@@ -1,8 +1,8 @@
-const mongoose = require('mongoose'); // Erase if already required
+import mongoose from "mongoose";
 
 // Declare the Schema of the Mongo model
 const permissionSchema = new mongoose.Schema({
-    module: {
+    module_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Module"
     },

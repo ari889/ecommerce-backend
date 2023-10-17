@@ -3,9 +3,14 @@ import http from 'http';
 import dotenv from 'dotenv';
 import mongoose from "mongoose";
 import { commonErrorHandler, notFoundHandler } from "./middlewares/common/errorHandler.js";
+
+/**
+ * all routers
+ */
 import authRouter from './routes/authRouter.js'
 import menuRouter from './routes/menuRouter.js'
 import roleRouter from './routes/roleRouter.js'
+import moduleRouter from './routes/moduleRouter.js'
 
 /**
  * express app
@@ -57,6 +62,11 @@ app.use("/menu", menuRouter);
  * menu routes
  */
 app.use("/role", roleRouter);
+
+/**
+ * module routes
+ */
+app.use("/module", moduleRouter);
 
 /**
  * server create

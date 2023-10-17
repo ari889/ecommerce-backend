@@ -2,11 +2,11 @@ const mongoose = require('mongoose'); // Erase if already required
 
 // Declare the Schema of the Mongo model
 var permissionRoleSchema = new mongoose.Schema({
-    permission: {
+    permission_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Permission"
     },
-    role: {
+    role_id: {
         type: mongoose.Schema.ObjectId,
         ref: "Role"
     },

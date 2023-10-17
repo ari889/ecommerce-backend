@@ -2,11 +2,11 @@ const mongoose = require('mongoose'); // Erase if already required
 
 // Declare the Schema of the Mongo model
 var moduleRoleSchema = new mongoose.Schema({
-    module: {
+    module_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Module"
     },
-    role: {
+    role_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Role"
     },

@@ -34,6 +34,7 @@ export const slug = (text) => {
  * common error response
  */
 export const commonErr = (msg, res, code = 500) => {
+    console.log(msg, res)
     return res.status(code).json({
         errors: {
             common: msg

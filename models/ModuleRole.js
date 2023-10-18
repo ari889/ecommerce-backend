@@ -1,4 +1,4 @@
-const mongoose = require('mongoose'); // Erase if already required
+import mongoose from "mongoose";
 
 // Declare the Schema of the Mongo model
 var moduleRoleSchema = new mongoose.Schema({
@@ -23,6 +23,6 @@ var moduleRoleSchema = new mongoose.Schema({
 });
 
 //Export the model
-const ModuleRole = mongoose.model('User', moduleRoleSchema);
+const ModuleRole = mongoose.model('ModuleRole', moduleRoleSchema);
 
 export default ModuleRole;

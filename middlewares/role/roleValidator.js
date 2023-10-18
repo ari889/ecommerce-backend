@@ -52,10 +52,10 @@ export const updateRoleValidators = [
     check("role_name")
         .notEmpty()
         .withMessage("Enter role name!")
-        .custom(async (value) => {
+        .custom(async (value, { req }) => {
             try {
                 const roleSlug = slug(value);
-                const role = await Role.findOne({ slug: { $ne: roleSlug } });
+                const role = await Role.findOne({ slug: roleSlug, _id: { $ne: req?.params?.id } });
                 if (role) {
                     throw createError("Role already exists!")
                 }

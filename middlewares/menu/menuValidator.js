@@ -52,10 +52,10 @@ export const updateMenuValidators = [
     check("menu_name")
         .notEmpty()
         .withMessage("Enter menu name!")
-        .custom(async (value) => {
+        .custom(async (value, { req }) => {
             try {
                 const menuSlug = slug(value);
-                const menu = await Menu.findOne({ slug: { $ne: menuSlug } });
+                const menu = await Menu.findOne({ slug: menuSlug, _id: { $ne: req?.params?.id } });
                 if (menu) {
                     throw createError("Menu already exists!")
                 }

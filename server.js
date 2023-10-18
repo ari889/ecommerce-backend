@@ -11,6 +11,7 @@ import authRouter from './routes/authRouter.js'
 import menuRouter from './routes/menuRouter.js'
 import roleRouter from './routes/roleRouter.js'
 import moduleRouter from './routes/moduleRouter.js'
+import permissionRouter from './routes/permissionRouter.js'
 
 /**
  * express app
@@ -67,6 +68,11 @@ app.use("/role", roleRouter);
  * module routes
  */
 app.use("/module", moduleRouter);
+
+/**
+ * permission router
+ */
+app.use('/permission', permissionRouter);
 
 /**
  * server create
